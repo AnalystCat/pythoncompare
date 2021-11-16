@@ -5,7 +5,7 @@ files = []
 for fi in glob.glob("*.bl"):
     files.append(fi)
 
-def get_best_hit(fichier):
+"""def get_best_hit(fichier):
     f = open(fichier)
     lines = f.readlines()
     blastp = {}
@@ -61,7 +61,7 @@ for fi in files:
         reciproque = fi.split("-vs-")[1][:-3] + "-vs-" + fi.split("-vs-")[0] + ".bl"
         dico2 = best_hit[reciproque]
         hits[fi] = hits_reciproques(dico1, dico2)
-        done.append(reciproque)
+        done.append(reciproque)"""
 
 def get_gene_list(fichier):
     f = open(fichier)
@@ -70,7 +70,7 @@ def get_gene_list(fichier):
 
     for line in lines:
         if line.startswith(">"):
-            genes.append(line[1:])
+            genes.append(line[1:-1])
 
     f.close()
 
@@ -84,6 +84,7 @@ for fi in glob.glob("*.fa"):
 dico_genome = {}
 
 for fi in fa_files:
+    genome_name = fi[:-3]
     dico_genome[fi] = {}
     dico_genome[fi] = get_gene_list(fi)
 
