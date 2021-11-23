@@ -45,7 +45,7 @@ def get_best_hit(fichier):
 
                 if signif == 1:
                     # Le hit est meilleur que celui d'avant
-                    if identite < float(line.split("\t")[2]) or evalue > float(line.split("\t")[11]):
+                    if identite >= float(line.split("\t")[2]) and evalue <= float(line.split("\t")[11]):
                         blastp[gene] = line.split("\t")[1]
                         signif = 2
 
