@@ -184,4 +184,4 @@ def main(per_identity, per_coverage, evalue):
     print(" ")
     
 # Running the script
-main(per_identity=50, per_coverage=0.5, evalue=float("1e-10"))
+main(per_identity=70, per_coverage=0, evalue=float("1e-10"))
